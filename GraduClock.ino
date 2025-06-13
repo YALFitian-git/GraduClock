@@ -48,7 +48,7 @@ void loop() {
   // Get timestamp, subtract from target and convert to units
   char timeStr[12];
   time_t currentTime;
-  int targetTimeStamp = 1767247200 //Replace pre-set value with your target timestamp
+  int targetTimeStamp = 1767247200; //Replace pre-set value with your target timestamp
   currentTime = time(NULL); //Get current timestamp
   int countdownTime = (targetTimeStamp - currentTime); //Subtract current timestamp from target to create a countdown
   int days = (countdownTime / 86400); 
