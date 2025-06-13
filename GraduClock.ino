@@ -46,7 +46,7 @@ void loop() {
   }
 
   // Get timestamp, subtract from target and convert to units
-  char timeStr[12];
+  char countDown[12];
   time_t currentTime;
   int targetTimeStamp = 1767247200; //Replace pre-set value with your target timestamp
   currentTime = time(NULL); //Get current timestamp
@@ -56,14 +56,14 @@ void loop() {
   int hours = (rem / 3600); //remainder variable converts remainders in days to hours
   rem = rem % 3600;
   int mins = (rem / 60); //remainder variable converts remainders in hours to minutes
-  sprintf(timeStr, "%lu:%02lu:%02lu", days, hours, mins); //Text formatting
+  sprintf(countDown, "%lu:%02lu:%02lu", days, hours, mins); //Text formatting
 
   // Display on OLED
   display.clearDisplay();
   display.setTextColor(SSD1306_WHITE);
   display.setTextSize(2);
   display.setCursor(8, 20);
-  display.print(timeStr);
+  display.print(countDown);
   display.display();
   delay(1000);
 }
